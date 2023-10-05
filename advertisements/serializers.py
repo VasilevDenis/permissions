@@ -23,7 +23,8 @@ class AdvertisementSerializer(serializers.ModelSerializer):
     class Meta:
         model = Advertisement
         fields = ('id', 'title', 'description', 'creator',
-                  'status', 'created_at', )
+                  'status', 'created_at',)
+        read_only_fields = ['creator', ]
 
     def create(self, validated_data):
         """Метод для создания"""
